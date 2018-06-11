@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
-import styled from 'styled-components'
 import Weather from './components/Weather'
-import Cities from './components/Cities'
+import City from './components/City'
 
-const Root = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`
 
 class App extends Component {
   constructor() {
@@ -37,7 +31,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Cities getWeather={this.getWeather}/>
+        <City     getWeather={this.getWeather}
+                  weatherData={this.state.weatherData}/>
         <Weather  weatherData={this.state.weatherData}
                   isLoading={this.state.isLoading}/>
       </div>
