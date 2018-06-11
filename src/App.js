@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      weatherData: '',
+      weatherData: undefined,
       isLoading: false
     }
   }
@@ -28,7 +28,7 @@ class App extends Component {
           return console.log('api error:',response.statusText);
         }
         response.json().then(data => {
-          this.setState({weatherData: data.main, isLoading: false}) //set state of weatherData and revert isLoading back to false
+          this.setState({weatherData: {name:data.name, main:data.main}, isLoading: false}) //set state of weatherData and revert isLoading back to false
         })
       })
     },500)
