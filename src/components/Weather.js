@@ -13,9 +13,9 @@ class Weather extends Component {
         <Temp>
           <div>
             <h3>Today's Weather in {this.props.weatherData.name}</h3>
-            <p>Current Temp: {this.props.weatherData.main.temp}C</p>
-            <p>Min Temp: {this.props.weatherData.main.temp_min}C</p>
-            <p>Max Temp: {this.props.weatherData.main.temp_max}C</p>
+            <p>Current Temp: {this.props.weatherData.main.temp}C <br/>
+            Min Temp: {this.props.weatherData.main.temp_min}C <br/>
+            Max Temp: {this.props.weatherData.main.temp_max}C</p>
           </div>
         </Temp>
       )
