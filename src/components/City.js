@@ -8,15 +8,18 @@ const Buttons = styled.div`
 const Button = styled.button`
   cursor: pointer;
   font-family: sans-serif;
+  color: #3E82F7;
   font-size: 15px;
   background: white;
   width: 100px;
   margin: 10px 5px;
   padding: 10px 0px;
   border-radius: 5px;
+  border-color: #3E82F7;
   &:focus {
     background: #3E82F7;
     outline: 0;
+    color: white;
   }
 `
 class City extends Component {
