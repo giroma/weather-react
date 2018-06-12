@@ -11,8 +11,19 @@ class App extends Component {
       isLoading: false
     }
   }
+  changeButtonStyle = (e) => { //change style on clicked button, and reset others
+    const buttons = e.target.parentNode.childNodes
+    for (let child of buttons) { //reset button styling
+      child.style.background = 'white'
+      child.style.color = '#3E82F7'
+    }
+    e.target.style.background='#3E82F7'//set styling for clicked button
+    e.target.style.color='white'
+  }
 
   getWeather = (e) => {
+    this.changeButtonStyle(e)
+
     const city = e.target.textContent
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},ca&appid=e83886c8c652380bf830a0c8c53bd222&units=metric`
     this.setState({isLoading: true}) //set the state to loading
@@ -31,7 +42,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <City     getWeather={this.getWeather}/>
+        <City     getWeather={this.getWeather}
+                  weatherData={this.state.weatherData}/>
         <Weather  weatherData={this.state.weatherData}
                   isLoading={this.state.isLoading}/>
       </div>

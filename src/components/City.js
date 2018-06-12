@@ -17,9 +17,7 @@ const Button = styled.button`
   border-radius: 5px;
   border-color: #3E82F7;
   &:focus {
-    background: #3E82F7;
     outline: 0;
-    color: white;
   }
 `
 class City extends Component {
