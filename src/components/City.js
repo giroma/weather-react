@@ -21,12 +21,18 @@ const Button = styled.button`
   }
 `
 class City extends Component {
+  createButton = () => {
+    const cities = ['Toronto','Montreal','Ottawa']
+    let allCities = []
+    for (let city of cities) {
+      allCities.push(<Button className={(this.props.weatherData && this.props.weatherData.name == city) ? 'pressed': ''} onClick={this.props.getWeather}>{city}</Button>)
+    }
+    return allCities
+  }
   render() {
     return (
       <Buttons >
-        <Button onClick={this.props.getWeather}>Toronto</Button>
-        <Button onClick={this.props.getWeather}>Montreal</Button>
-        <Button onClick={this.props.getWeather}>Ottawa</Button>
+        {this.createButton()}
       </Buttons>
     )
   }
