@@ -12,8 +12,7 @@ class App extends Component {
     }
   }
 
-  getWeather = (e) => {
-    const city = e.target.textContent
+  getWeather = (e, city) => {
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},ca&appid=e83886c8c652380bf830a0c8c53bd222&units=metric`
     this.setState({isLoading: true}) //set the state to loading
     setTimeout(() => { //timeout to see loading... gif, otherwise its too fast

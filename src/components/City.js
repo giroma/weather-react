@@ -25,7 +25,7 @@ class City extends Component {
     const cities = ['Toronto','Montreal','Ottawa']
     let allCities = []
     for (let city of cities) {
-      allCities.push(<Button className={(this.props.weatherData && this.props.weatherData.name == city) ? 'pressed': ''} onClick={this.props.getWeather}>{city}</Button>)
+      allCities.push(<Button className={(this.props.weatherData && this.props.weatherData.name == city) ? 'pressed': ''} onClick={(e) => {this.props.getWeather(e, city)}}>{city}</Button>)
     }
     return allCities
   }
